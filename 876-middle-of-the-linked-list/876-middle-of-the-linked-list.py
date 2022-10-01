@@ -11,10 +11,18 @@ class Solution:
             counter += 1
             node=node.next
         index = counter//2
+        
         node = head
-        for i in range(index):
-            node = node.next
-        return node
+        counter = 0
+        
+        while node:
+            if counter == index:
+                return node
+            else:
+                node = node.next
+                counter += 1
+        return None
+        
         
         
             
