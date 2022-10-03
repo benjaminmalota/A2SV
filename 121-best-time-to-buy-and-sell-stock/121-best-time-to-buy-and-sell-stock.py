@@ -4,14 +4,23 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
-        if len(prices) == 0:
+        l = 0 
+        r = 1
+        profit = []
+        
+        while r < len(prices):
+            if prices[l] < prices[r] or prices[l] == prices[r] :
+                curr = prices[r] - prices[l]
+                profit.append(curr)
+                r+=1
+            else:
+                l += 1
+        
+        while profit:
+            return max(profit)
+        if profit == []:
             return 0
-        else:
-            maximum = 0
-            minimum = prices[0]
-            for i in range(len(prices)):
-                profit = prices[i] - minimum
-                maximum = max(profit, maximum)
-                minimum = min(minimum, prices[i])
 
-            return maximum
+                
+                
+            
