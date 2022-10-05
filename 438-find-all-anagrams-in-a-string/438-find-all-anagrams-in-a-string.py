@@ -1,14 +1,13 @@
 class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
         
-        p2 = {}
-        
-        for i in p:
-            p2[i] = 1 + p2.get(i, 0)
-        
+        p2 = {} 
         l = 0
         d = {}
         res = []
+        
+        for i in p:
+            p2[i] = 1 + p2.get(i, 0)
             
         for r in range(len(s)):
             d[s[r]] = 1 + d.get(s[r], 0)
