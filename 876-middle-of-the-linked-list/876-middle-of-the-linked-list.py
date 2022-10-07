@@ -21,7 +21,6 @@ class Solution:
             else:
                 node = node.next
                 counter += 1
-        return None
         
         
         
